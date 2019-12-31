@@ -25,11 +25,11 @@ My church now uses WorshipHub instead of EpicWorship full time but I've shied aw
 
 ### Downloads/Builds
 
-[windows: ](https://www.dropbox.com/s/iacj4mpftrg02k3/worshiphub.0.0.0.windows.zip?dl=0)
+These downloads include the java jvm so you should be able to simply double-click on the executable file within the tarball/zip file to run the application
 
-[linux: ](https://www.dropbox.com/s/yf5csmw1fzjpzm6/worshiphub.0.0.0.linux.tar.gz?dl=0)
-
-For Mac, use the steps below to build the application
+* windows: [https://www.dropbox.com/s/iacj4mpftrg02k3/worshiphub.0.0.0.windows.zip?dl=0](https://www.dropbox.com/s/iacj4mpftrg02k3/worshiphub.0.0.0.windows.zip?dl=0)
+* linux: [https://www.dropbox.com/s/yf5csmw1fzjpzm6/worshiphub.0.0.0.linux.tar.gz?dl=0](https://www.dropbox.com/s/yf5csmw1fzjpzm6/worshiphub.0.0.0.linux.tar.gz?dl=0)
+* mac: For Mac, use the steps below to build the application
 
 ### How to build
 
