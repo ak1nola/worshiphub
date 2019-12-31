@@ -11,35 +11,37 @@ My church used it for 2 or 3 years with no unknown issues popping up.
 
 ### Why
 
-So why this if EpicWorship was/is so cool. 
-
-* I've had to edit the fxml file for EpicWorship to simplify the UI for non-techie folks in my church. 
-* According to https://github.com/iyobo/epicworship/commit/31a89ef5fa4f6efea72acbfbdaf28f4bff56635e, Iyobo switching to nodejs more or less meant EpicWorship, in it's current iteration, is not the future. I've honestly looked at other presentation tools but the folks in my church really like the simpler EpicWorship UI.
-* Sometime in Dec 2018, I decided to bite the bullet and learn Kotlin. I picked EpicWorship as the project to modify/write in Kotlin. I'm still pretty much a kotlin newb and I think this is reflected a lot in the way the code looks like Java code sometimes.
-* This also gave me the opportunity to try out new features like modules and jpackage in java9 upwards
-* The bulk of my dev experience has been as a non-desktop UI developer. This just felt like a fun project to try out to see how feature full desktop dev experience would feel like. 
-
-My church now uses WorshipHub instead of EpicWorship full time but I've shied away from putting the code on-line because there have always been one or two issues to resolve. Honestly don't know if I'll get to those so I'm putting it out here anyway.
+If EpicWorship was/is so cool - why create another version of it? 
 
 ![](screenshot.png)
 
-### How to run downloaded application-image
+* I had to edit the fxml file for EpicWorship to simplify the UI (remove tabs) for non-techie folks in my church. 
+* Per https://github.com/iyobo/epicworship/commit/31a89ef5fa4f6efea72acbfbdaf28f4bff56635e, Iyobo switching to nodejs more or less means EpicWorship, in it's current iteration, has no the future. I've honestly looked at other presentation tools but the folks in my church really like the simpler EpicWorship UI.
+* Sometime in Dec 2018, I decided to bite the bullet and learn Kotlin so I figured I'd rewrite/update EpicWorship in Kotlin as a pet project. I'm still pretty much a kotlin newb as you'll see in how much the code looks like Java code sometimes.
+* This project also gave me the opportunity to try out new features like modules and jpackage in java9 upwards
+* The bulk of my dev experience has been as a non-desktop backend developer. This just felt like a fun project to work on a feature-rich desktop application. 
 
-For now, you have to build one yourself. See the steps below. And yes, I understand that I'm setting myself up to fail here :)
+My church now uses WorshipHub instead of EpicWorship full time but I've shied away from putting the code on-line because there have always been one or two issues to resolve. Honestly don't know if I'll get to those so I'm putting it out here anyway.
+
+### Downloads/Builds
+
+[windows: ](https://www.dropbox.com/s/iacj4mpftrg02k3/worshiphub.0.0.0.windows.zip?dl=0)
+
+[linux: ](https://www.dropbox.com/s/yf5csmw1fzjpzm6/worshiphub.0.0.0.linux.tar.gz?dl=0)
+
+For Mac, use the steps below to build the application
 
 ### How to build
 
-I'll upload download app-images in a few days but for now. 
-
 * Clone or download this repo
-* Download java-14 (https://jdk.java.net/14/) - you need this for jpackage
-* make sure you have maven installed on your laptop
-* run the following command `mvn clean package -Djpackage=/opt/jdk-14/bin/jpackage` - remember to change jpackage parameter to the location of the unzipped java-14 tarball you downloaded earlier
+* Download java-14 [](https://jdk.java.net/14/) - you need this for jpackage
+* make sure you have maven installed on or downloaded to your laptop
+* from the repo directory, run the following command `mvn clean package -Djpackage=/opt/jdk-14/bin/jpackage` - remember to change jpackage parameter to the location of the unzipped java-14 tarball you downloaded earlier. Same goes for mvn e.g. on windows this is what I run `c:\apache-maven-3.6.3\bin\mvn clean package -Djpackage=c:\jdk-14\bin\jpackage`
 * Simply double-click (or click on mac?) the build worshiphub executable
 
 ### Other very very important stuff
 
-* The motion file: http://video2.ignitemotion.com/files/mp4/Looping_Clouds.mp4. There are tonnes of sites to download similar videos free. Google is your friend here (or maybe not)
+* The motion file: http://video2.ignitemotion.com/files/mp4/Looping_Clouds.mp4 and https://pixabay.com/videos/particles-turquoise-retro-squares-5156/. There are tonnes of sites to download similar videos free. Google is your friend here (or maybe not)
 * The background files in this repo are download from https://www.pexels.com 
 * As much as possible where code was lifted from other sources, I've included references to such in the source code
 * Bibles are xmm format download from https://sourceforge.net/projects/zefania-sharp/files/Bibles/ENG/ and somewhere else I can't remember right now :(
