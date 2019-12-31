@@ -1,0 +1,27 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.window {
+  -fx-font: 13px "Ubuntu";
+}
+
+.tree-table-row-cell:odd {
+  -fx-background-color: #ffffff;
+}
+
+.tree-table-row-cell:even {
+  -fx-background-color: #e0e0e0 ;
+}
+
+.tree-table-row-cell:selected {
+  -fx-background-color: #778899;
+}
+
+.tree-table-row-cell:expanded {
+    -fx-font-weight: bold;
+}
+
+.toggle-button {
+    -fx-padding: 3px;
+    -fx-border-insets: 3px;
+    /*-fx-background-insets: 2px;*/
+}

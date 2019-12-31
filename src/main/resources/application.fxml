@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.eniola.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="640.0" minWidth="900.0" prefHeight="543.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.eniola.Controller">
+   <children>
+      <GridPane hgap="5.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="35.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+
+              </rowConstraints>
+                <GridPane.margin>
+                    <Insets bottom="6" left="0" right="0" top="0" />
+                </GridPane.margin>
+               <children>
+                  <TextField fx:id="txtSearch" onAction="#onLibraryFilter" onKeyReleased="#onLibraryFilter" promptText="Search" />
+                  <Accordion fx:id="accordion" maxHeight="1.7976931348623157E308" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                    <panes>
+                      <TitledPane fx:id="recordPane" animated="false" maxHeight="1.7976931348623157E308" text="Library" wrapText="true">
+                           <content>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="100" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" percentHeight="60" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" percentHeight="40" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                  <GridPane.margin>
+                                      <Insets bottom="0" left="0" right="0" top="0" />
+                                  </GridPane.margin>
+                                  <padding>
+                                      <Insets bottom="0" left="0" right="0" top="0" />
+                                  </padding>
+                                 <children>
+                                    <ListView fx:id="lstRecords" maxHeight="1.7976931348623157E308" onKeyPressed="#onLibraryItemSelected1" onMouseClicked="#onLibraryItemSelected2" prefHeight="301.0" prefWidth="237.0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS">
+                                        <items>
+                                            <FXCollections fx:factory="observableArrayList">
+                                                <String fx:id="hymn1" fx:value="SDAH 001: Praise to the Lord" />
+                                                <String fx:id="hymn2" fx:value="SDAH 002: All People that on earth do dwell" />
+                                                <String fx:id="hymn3" fx:value="SDAH 003: Praise Him" />
+                                                </FXCollections>
+                                        </items>
+                                    </ListView>
+                                    <GridPane hgap="3.0" vgap="3.0" GridPane.rowIndex="1">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                      </rowConstraints>
+                                       <children>
+                                          <GridPane hgap="3.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Button fx:id="cmdPrev" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onBiblePrevVerse" text="↤ project" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                                                <Button fx:id="cmdNext" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onBibleNextVerse" text="project ↦" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                                             </children>
+                                          </GridPane>
+                                          <ComboBox fx:id="cboVersion" maxWidth="1.7976931348623157E308" onAction="#onBibleVersionChanged" promptText="Bible Version" GridPane.rowIndex="1" />
+                                          <GridPane hgap="3.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" percentWidth="50.0" />
+                                                <ColumnConstraints hgrow="NEVER" />
+                                              <ColumnConstraints hgrow="NEVER" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                            </rowConstraints>
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                             <children>
+                                                <ListView id="lstBook" fx:id="lstBook" maxWidth="1.7976931348623157E308" onInputMethodTextChanged="#onBibleBookChanged" onMouseClicked="#onBibleBookChanged" onTouchPressed="#onBibleBookChanged" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS">
+                                                    <items>
+                                                        <FXCollections fx:factory="observableArrayList">
+                                                            <String fx:id="genesis" fx:value="Genesis" />
+                                                            <String fx:id="exodus" fx:value="Exodus" />
+                                                            <String fx:id="deteronomy" fx:value="Deutero" />
+                                                        </FXCollections>
+                                                    </items>
+                                                </ListView>
+                                                 <ListView fx:id="lstChapter" onInputMethodTextChanged="#onBibleChapterChanged" onMouseClicked="#onBibleChapterChanged" onTouchPressed="#onBibleChapterChanged" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS">
+                                                     <items>
+                                                         <FXCollections fx:factory="observableArrayList">
+                                                             <String fx:id="1" fx:value="1" />
+                                                             <String fx:id="2" fx:value="2" />
+                                                             <String fx:id="3" fx:value="3" />
+                                                         </FXCollections>
+                                                     </items>
+                                                 </ListView>
+                                                 <ListView fx:id="lstVerse" onMouseClicked="#onBibleVerseClicked" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS">
+                                                     <items>
+                                                         <FXCollections fx:factory="observableArrayList">
+                                                             <String fx:id="1" fx:value="1" />
+                                                             <String fx:id="2" fx:value="2" />
+                                                             <String fx:id="3" fx:value="3" />
+                                                         </FXCollections>
+                                                     </items>
+                                                 </ListView>
+                                             </children>
+                                          </GridPane>
+                                          <CheckBox fx:id="chkSortBooks" mnemonicParsing="false" onAction="#onBibleSortClicked" text="Sort Bible Books" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="3.0" right="3.0" top="3.0" />
+                                       </padding>
+                                    </GridPane>
+                                 </children>
+                              </GridPane>
+                           </content>
+                      </TitledPane>
+                      <TitledPane animated="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Settings">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <GridPane hgap="3.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="-Infinity" vgrow="NEVER" />
+                                          <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                      </rowConstraints>
+                                       <children>
+                                          <ComboBox fx:id="cboProjectorScreen" maxWidth="1.7976931348623157E308" onAction="#onProjectorSettingsScreenChange" promptText="Projection Screen" visibleRowCount="3" GridPane.hgrow="ALWAYS">
+                                           <items>
+                                               <FXCollections fx:factory="observableArrayList">
+                                                   <String fx:id="0" fx:value="Refresh Monitors" />
+                                               </FXCollections>
+                                           </items>
+                                          </ComboBox>
+                                          <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onProjectorSettingsBackgroundChange" text="Change Background" textAlignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" />
+                                          <ComboBox fx:id="cboFontName" maxWidth="1.7976931348623157E308" onAction="#onFontPropertyChanged" promptText="Choose Font Name" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" />
+                                          <ComboBox fx:id="cboFontSize" maxWidth="1.7976931348623157E308" onAction="#onFontPropertyChanged" promptText="Choose Font Size" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" />
+                                          <ComboBox fx:id="cboShadowRadius" maxWidth="1.7976931348623157E308" onAction="#onFontPropertyChanged" promptText="Choose Font Shadow Radius" GridPane.rowIndex="8" />
+                                          <ComboBox fx:id="cboShadowSpread" maxWidth="1.7976931348623157E308" onAction="#onFontPropertyChanged" promptText="Choose Font Shadow Dimness" GridPane.rowIndex="10" />
+                                          <CheckBox fx:id="chkBackgroundActive" mnemonicParsing="false" onAction="#onProjectorSettingsBackgroundToggle" text="Show Background" GridPane.rowIndex="2" />
+                                          <ColorPicker fx:id="cboFontColor" maxWidth="1.7976931348623157E308" onAction="#onFontPropertyChanged" promptText="Choose Font Color" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" />
+                                          <ColorPicker fx:id="cboShadowColor" maxWidth="1.7976931348623157E308" onAction="#onFontPropertyChanged" promptText="Choose Font Shadow Color" GridPane.rowIndex="9" />
+                                          <Separator prefWidth="200.0" GridPane.rowIndex="1" />
+                                          <Separator prefWidth="200.0" GridPane.rowIndex="4" />
+                                          <Separator prefWidth="200.0" GridPane.rowIndex="11" />
+                                          <Separator prefWidth="200.0" GridPane.rowIndex="14" />
+                                          <HBox maxWidth="1.7976931348623157E308" spacing="3.0" GridPane.rowIndex="15">
+                                             <children>
+                                                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onLibraryImport" text="Import" HBox.hgrow="ALWAYS" />
+                                                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onLibraryExport" text="Export" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                          </HBox>
+                                          <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#help" text="Show Help" GridPane.hgrow="ALWAYS" GridPane.rowIndex="13">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                          </Button>
+                                          <CheckBox fx:id="cboWhitespace" mnemonicParsing="false" text="Show Whitespace in Editor" GridPane.rowIndex="12" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children>
+            </GridPane>
+            <GridPane hgap="3.0" vgap="3.0" GridPane.columnIndex="1">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="50.0" minWidth="49.0" prefWidth="49.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="10.0" prefWidth="191.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" />
+               </padding>
+               <children>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onLibraryPersist" prefHeight="25.0" prefWidth="69.0" text="Save" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" />
+
+                  <TextField fx:id="txtTitle" promptText="Enter Title here" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" />
+                  <TextField fx:id="txtAuthor" promptText="Enter Author Here" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onProjectorQueueItemAppend" text="Projector Queue ➺" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="5" HBox.hgrow="ALWAYS" />
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onLibraryFileChange" text="Select image, audio or video" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                  <TextArea fx:id="txtContent" maxWidth="1.7976931348623157E308" promptText="Enter text details here" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onLibraryDelete" text="Delete" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <GridPane GridPane.columnIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="100" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" percentHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" percentHeight="40.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TreeTableView fx:id="tblProjectorRecords" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyPressed="#onProjectorQueueItemKeyPressed" onMouseClicked="#onProjectorQueueItemClicked" showRoot="false" sortMode="ONLY_FIRST_LEVEL" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                    <columns>
+                      <TreeTableColumn fx:id="colProjectorRecords" editable="false" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="-1.0" sortable="false" text="Projector Queue" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <opaqueInsets>
+                        <Insets bottom="5.0" />
+                     </opaqueInsets>
+                  </TreeTableView>
+                  <BorderPane fx:id="imgAnchor" GridPane.rowIndex="1">
+                     <center>
+                        <io.eniola.ImageView fx:id="imgPreview" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+                     </center>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </BorderPane>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets top="3.0" />
+               </GridPane.margin>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+   <opaqueInsets>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </opaqueInsets>
+</AnchorPane>
