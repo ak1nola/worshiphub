@@ -4,7 +4,7 @@ This is a church projection application
 
 ### What
 
-This is a clone of https://github.com/iyobo/epicworship. 
+This, in a lot of ways, is a rewrite of https://github.com/iyobo/epicworship - with a hopefully simpler ui (read as no tabs) and in Kotlin instead of java (more on this below). 
 
 EpicWorship is an excellent application and I recommend it to anybody looking for a free worship projection tool. 
 My church used it for 2 or 3 years with no unknown issues popping up. 
